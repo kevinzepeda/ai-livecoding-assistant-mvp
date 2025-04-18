@@ -13,16 +13,19 @@ This project allows you to start live interaction sessions with an intelligent a
 
 ```
 .
-├── backend/                # FastAPI backend
-├── frontend/               # Web client
+├── backend/
+├── frontend/
 ├── utils/
-│   └── screen_audio_capture.py   # Captures screen and audio, sends to WebSocket
+│   └── screen_audio_capture.py
+├── requirements.txt
+├── run.sh
+├── setup.sh
 └── README.md
 ```
 
 ---
 
-## 🛠️ Setting up the virtual environment with `venv`
+## 🛠️ Setting up the virtual environment
 
 1. Clone the repository:
 
@@ -31,31 +34,17 @@ git clone https://github.com/kevinzepeda/ai-livecoding-assistant-mvp.git
 cd ai-livecode-assistant-mvp
 ```
 
-2. Create a virtual environment:
-
-```bash
-python3 -m venv .venv
-```
-
-3. Activate the environment:
+2. Activate the environment:
 
 - On **Linux/macOS**:
 
 ```bash
-source .venv/bin/activate
+chmod +x setup.sh && ./setup.sh
 ```
 
 - On **Windows**:
 
-```powershell
-.venv\Scripts\activate
-```
-
-4. Install the requirements:
-
-```bash
-chmod +x setup.sh && ./setup.sh
-```
+> ⚠️ **Note:** This project has not been tested or made available for Windows at this time. It is recommended to use a Linux-based or macOS operating system.
 
 ---
 
@@ -102,7 +91,7 @@ SESSION_CODE=demo123
 From a terminal, with the virtual environment activated:
 
 ```bash
-python utils/screen_audio_capture.py
+chmod +x run.sh && ./run.sh
 ```
 
 Press and hold `F12` to start recording. When released, the transcription and screenshot will be automatically sent to the backend.
