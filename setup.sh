@@ -14,10 +14,6 @@ python3 -m venv .venv
 echo "⚙️ Activating virtual environment..."
 source .venv/bin/activate
 
-echo "📚 Installing Python dependencies..."
-pip install --upgrade pip
-pip install -r requirements.txt
-
 echo "🔍 Checking required environment variables..."
 
 missing_env=false
@@ -81,6 +77,10 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 else
     echo "⚠️ Operating system not automatically supported. Install dependencies manually."
 fi
+
+echo "📚 Installing Python dependencies..."
+pip install --upgrade pip
+pip install -r requirements.txt
 
 echo "✅ Setup complete. You can start the system with:"
 echo "   ./run.sh"
